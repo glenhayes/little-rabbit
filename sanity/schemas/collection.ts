@@ -17,7 +17,9 @@ export default defineType({
       title: 'Image',
       name: 'image',
       type: 'image',
-      options: {hotspot: true},
+      options: {
+        hotspot: true,
+      },
     }),
     defineField({
       name: 'description',
