@@ -14,6 +14,7 @@ export default async function Home() {
             {siteInformation[0]?.siteTitle}
           </span>
           <h1>{siteInformation[0]?.siteDescription}</h1>
+          <p className='text-lg mt-8'>Site coming soon</p>
         </div>
       )}
     </div>
