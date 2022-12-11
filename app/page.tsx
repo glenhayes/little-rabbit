@@ -1,10 +1,21 @@
-export default function Home() {
+import { client } from './sanity';
+
+export default async function Home() {
+  const siteInformation = await client.fetch(`
+  *[_type=='settings']{
+    siteTitle,
+  siteDescription
+}`);
   return (
     <div className='grid place-content-center min-h-screen'>
-      <div>
-        <h1 className='text-xl text-center'>Little Rabbit</h1>
-        <p>A collection of possessions</p>
-      </div>
+      {siteInformation && (
+        <div className='text-center'>
+          <span className='italic font-bold'>
+            {siteInformation[0]?.siteTitle}
+          </span>
+          <h1>{siteInformation[0]?.siteDescription}</h1>
+        </div>
+      )}
     </div>
   );
 }

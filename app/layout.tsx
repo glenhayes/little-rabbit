@@ -1,6 +1,5 @@
 import './globals.css';
 import { Karla } from '@next/font/google';
-import classnames from 'classnames';
 
 const karla = Karla({ subsets: ['latin'], variable: '--font-karla' });
 
