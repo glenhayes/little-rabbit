@@ -17,7 +17,7 @@ const Header = async ({ pageTitle }: Props) => {
   }`)) as SiteInformation | null;
 
   return (
-    <div className='fixed top-0 left-0 w-full site-x-padding py-12 lg:py-14'>
+    <div className='fixed top-0 left-0 w-full site-x-padding py-8 xl:py-14'>
       <div className=''>
         {siteInformation && (
           <div className='text-center md:text-left'>
