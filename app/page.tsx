@@ -7,7 +7,7 @@ export default async function Home() {
   siteDescription
 }`);
   return (
-    <div className='grid place-content-center min-h-screen'>
+    <div className='grid place-content-center min-h-full'>
       {siteInformation && (
         <div className='text-center'>
           <span className='italic font-bold'>
