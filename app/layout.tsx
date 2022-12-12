@@ -16,11 +16,7 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className='h-full'>
-        {/* @ts-expect-error Async Server Component */}
-        <Header />
-        {children}
-      </body>
+      <body className='h-full'>{children}</body>
     </html>
   );
 }
