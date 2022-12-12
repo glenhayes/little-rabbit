@@ -8,6 +8,11 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    maxWidth: {
+      'site-xl': '95rem',
+      'site-lg': '77.5rem',
+      'site-md': '45rem',
+    },
     extend: {
       fontFamily: {
         sans: ['var(--font-karla)', ...fontFamily.sans],

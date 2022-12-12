@@ -5,3 +5,9 @@
 [data-nextjs-scroll-focus-boundary] {
   display: contents;
 }
+
+@layer utilities{
+  .site-x-padding{
+    @apply px-4 sm:px-[50px] xl:px-[100px] 2xl:px-[200px];
+  }
+}
