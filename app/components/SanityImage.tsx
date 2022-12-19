@@ -9,7 +9,11 @@ type Props = {
 };
 
 export default function SanityImage({ source, width, height, alt }: Props) {
-  const url = urlFor(source).url();
+  let url = urlFor(source).url();
+
+  if (width && height) {
+    url = urlFor(source).width(width).height(height).url();
+  }
 
   const imageInfo = getImageInformation(url);
 
@@ -19,6 +23,7 @@ export default function SanityImage({ source, width, height, alt }: Props) {
       alt={alt}
       width={width ? width : imageInfo.width}
       height={height ? height : imageInfo.height}
+      className='w-auto h-full'
     />
   );
 }

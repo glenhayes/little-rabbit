@@ -2,9 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-[data-nextjs-scroll-focus-boundary] {
-  display: contents;
+@layer base{
+  :root{
+    --nav-height:5rem;
+  }
+  @screen lg{
+    :root{
+      --nav-height: 6rem;
+    }
+  }
+  [data-nextjs-scroll-focus-boundary] {
+    display: contents;
+  }
 }
+
+
 
 @layer utilities{
   .site-x-padding{

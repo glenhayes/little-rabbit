@@ -1,24 +1,14 @@
+import { querySiteInformation, SiteInformation } from './lib/sanity.query';
 import { client } from './sanity';
 
-type SiteInformation = {
-  siteTitle?: string;
-  siteDescription?: string;
-};
-
-type Props = {
-  pageTitle: false | string;
-};
-
-const Header = async ({ pageTitle }: Props) => {
-  const siteInformation = (await client.fetch(`
-  *[_type=='settings'][0]{
-    siteTitle,
-  siteDescription
-  }`)) as SiteInformation | null;
+const Header = async ({ pageTitle }: { pageTitle: false | string }) => {
+  const siteInformation = await client.fetch<SiteInformation>(
+    querySiteInformation
+  );
 
   return (
-    <div className='fixed top-0 left-0 w-full site-x-padding py-8 xl:py-14'>
-      <div>
+    <header className='lg:sticky lg:top-0  w-full site-x-padding h-[var(--nav-height)] flex items-center'>
+      <div className='w-full'>
         {siteInformation && (
           <div className='text-center md:text-left'>
             <span className='italic font-bold'>
@@ -28,7 +18,7 @@ const Header = async ({ pageTitle }: Props) => {
           </div>
         )}
       </div>
-    </div>
+    </header>
   );
 };
 

@@ -1,8 +1,8 @@
-import CollectionList from './components/CollectionList';
+import CollectionList from './components/CollectionList/CollectionList';
 
 export default async function Home() {
   return (
-    <div className='grid place-content-center min-h-full'>
+    <div className='pb-12 '>
       {/* @ts-expect-error Async Server Component */}
       <CollectionList />
     </div>
