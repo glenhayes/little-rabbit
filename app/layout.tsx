@@ -10,13 +10,16 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en' className={`${karla.variable} font-sans h-full`}>
+    <html
+      lang='en'
+      className={`${karla.variable} font-sans h-full dark:bg-gray-900 dark:text-gray-100`}
+    >
       {/*
         <head /> will contain the components returned by the nearest parent
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className='h-full'>
+      <body className='min-h-full'>
         {/* @ts-expect-error Async Server Component */}
         <Header />
         {children}
